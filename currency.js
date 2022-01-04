@@ -1,10 +1,6 @@
 const axios = require("axios");
 const _ = require("lodash");
-
-const cmcIdDict = {
-    "idr": process.env.CMC_IDR_ID,
-    "usd": process.env.CMC_USD_ID
-}
+const currencyIds = require("./currencyIds.json");
 
 const cmcHeaders = {
     "X-CMC_PRO_API_KEY": process.env.CMC_API_TOKEN
@@ -14,10 +10,10 @@ const convertURL = `https://pro-api.coinmarketcap.com/v1/tools/price-conversion`
 
 exports.handleCurrencyConverterRequest = async (amount, originCurrency, targetCurrency) => {
     if (!_.toInteger(amount)) return "Wrong amount, try again!";
-    if (!_.has(cmcIdDict, originCurrency) || !_.has(cmcIdDict, targetCurrency)) return "Wrong currency, try again!";
+    if (!_.has(currencyIds, originCurrency) || !_.has(currencyIds, targetCurrency)) return "Wrong currency, try again!";
 
-    const originId = _.get(cmcIdDict, originCurrency);
-    const targetId = _.get(cmcIdDict, targetCurrency);
+    const originId = _.get(currencyIds, originCurrency);
+    const targetId = _.get(currencyIds, targetCurrency);
 
     const params = {
         amount: amount,
