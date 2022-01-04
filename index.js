@@ -6,6 +6,7 @@ const client = new Discord.Client({ intents: [Discord.Intents.FLAGS.GUILDS, Disc
 const CHANNEL_WHITELISTS = new Set([
     'pesugihan-bijital', 'currencybot'
 ])
+const PORT = process.env.PORT || 5000
 
 const DISCORD_BOT_TOKEN = process.env.DISCORD_BOT_TOKEN;
 const DISCORD_BOT_PREFIX = process.env.DISCORD_BOT_PREFIX;
