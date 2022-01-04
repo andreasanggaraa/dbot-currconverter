@@ -1,0 +1,26 @@
+{
+  "name": "dbot-currconverter",
+  "version": "1.0.0",
+  "description": "Discord bot for convert shit",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andreasanggaraa/dbot-currconverter.git"
+  },
+  "author": "Ace",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andreasanggaraa/dbot-currconverter/issues"
+  },
+  "homepage": "https://github.com/andreasanggaraa/dbot-currconverter#readme",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "discord.js": "^13.4.0",
+    "dotenv": "^10.0.0",
+    "lodash": "^4.17.21"
+  }
+}
